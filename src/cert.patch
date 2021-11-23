@@ -1,0 +1,100 @@
+From 3979ead7b092559316c438ede42a247ac2d18576 Mon Sep 17 00:00:00 2001
+From: Grzegorz Slominski <grzegorzslominski@gmail.com>
+Date: Tue, 23 Nov 2021 20:38:37 +0100
+Subject: [PATCH] Fixed directory
+
+---
+ src/gra/Glowa.java           | 21 +++++++++------------
+ src/gra/Ogon.java            |  2 +-
+ src/gra/PunktDoZabrania.java |  2 +-
+ src/gra/Snake.java           |  6 +++---
+ 4 files changed, 14 insertions(+), 17 deletions(-)
+
+diff --git a/src/gra/Glowa.java b/src/gra/Glowa.java
+index 93e8700..0ae96d7 100644
+--- a/src/gra/Glowa.java
++++ b/src/gra/Glowa.java
+@@ -1,21 +1,18 @@
+ package gra;
+ 
++import java.util.concurrent.ThreadLocalRandom;
+ 
+-public class Glowa {
+-    Kierunek kierunek = Kierunek.PRAWO;
+-    int x,y;
++public final class PunktDoZabrania {
++    int x, y;
+ 
+-    public Glowa(int x, int y) {
+-        this.x = x;
+-        this.y = y;
+-    }
+-
+-    public Kierunek getKierunek() {
+-        return kierunek;
++    public PunktDoZabrania(){
++        this.x = ThreadLocalRandom.current().nextInt(0,15);
++        this.y = ThreadLocalRandom.current().nextInt(0,15);
+     }
+ 
+-    public void setKierunek(Kierunek dir) {
+-        this.kierunek = dir;
++    public void reset(){
++        this.x = ThreadLocalRandom.current().nextInt(0,15);
++        this.y = ThreadLocalRandom.current().nextInt(0,15);
+     }
+ 
+     public int getX() {
+diff --git a/src/gra/Ogon.java b/src/gra/Ogon.java
+index 93fa0d8..4f16394 100644
+--- a/src/gra/Ogon.java
++++ b/src/gra/Ogon.java
+@@ -1,6 +1,6 @@
+ package gra;
+ 
+-public class Ogon {
++public final class Ogon {
+     int x,y;
+     boolean czekaj = true;
+ 
+diff --git a/src/gra/PunktDoZabrania.java b/src/gra/PunktDoZabrania.java
+index d268823..0ae96d7 100644
+--- a/src/gra/PunktDoZabrania.java
++++ b/src/gra/PunktDoZabrania.java
+@@ -2,7 +2,7 @@ package gra;
+ 
+ import java.util.concurrent.ThreadLocalRandom;
+ 
+-public class PunktDoZabrania {
++public final class PunktDoZabrania {
+     int x, y;
+ 
+     public PunktDoZabrania(){
+diff --git a/src/gra/Snake.java b/src/gra/Snake.java
+index 7d5381c..ba66150 100644
+--- a/src/gra/Snake.java
++++ b/src/gra/Snake.java
+@@ -5,9 +5,9 @@ import gui.Gui;
+ import java.awt.*;
+ import java.util.ArrayList;
+ 
+-public class Snake {
++public final class Snake {
+ 
+-    public static  int punkty = 0, najlepszyWynik = 0;
++    public static int punkty = 0, najlepszyWynik = 0;
+ 
+     public static boolean czekajNaRuch = false;
+ 
+@@ -15,7 +15,7 @@ public class Snake {
+ 
+     public static ArrayList<Ogon> ogony = new ArrayList<>();
+ 
+-    public static PunktDoZabrania punktDoZabrania = new PunktDoZabrania();
++    public final static PunktDoZabrania punktDoZabrania = new PunktDoZabrania();
+ 
+     public static void dodajOgon() {
+         if (ogony.size() < 1) {
+-- 
+2.29.2.windows.2
+
