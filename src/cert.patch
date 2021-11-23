@@ -1,3 +1,20 @@
+Authors of the patch:
+Grzegorz Słomiński
+Mikołaj Saja
+
+The code has been changed based on the following rules SEI CERT Oracle Coding Standard for Java"
+
+OBJ01-J. Limit accessibility of fields,
+OBJ07-J. Sensitive classes must not let themselves be copied,
+OBJ10-J. Do not use public static nonfinal fields
+
+
+
+
+
+
+
+
 From 3979ead7b092559316c438ede42a247ac2d18576 Mon Sep 17 00:00:00 2001
 From: Grzegorz Slominski <grzegorzslominski@gmail.com>
 Date: Tue, 23 Nov 2021 20:38:37 +0100
