@@ -5,9 +5,9 @@ import gui.Gui;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Snake {
+public final class Snake {
 
-    public static  int punkty = 0, najlepszyWynik = 0;
+    public static int punkty = 0, najlepszyWynik = 0;
 
     public static boolean czekajNaRuch = false;
 
@@ -15,7 +15,7 @@ public class Snake {
 
     public static ArrayList<Ogon> ogony = new ArrayList<>();
 
-    public static PunktDoZabrania punktDoZabrania = new PunktDoZabrania();
+    public final static PunktDoZabrania punktDoZabrania = new PunktDoZabrania();
 
     public static void dodajOgon() {
         if (ogony.size() < 1) {

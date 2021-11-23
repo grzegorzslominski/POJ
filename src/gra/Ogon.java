@@ -1,6 +1,6 @@
 package gra;
 
-public class Ogon {
+public final class Ogon {
     int x,y;
     boolean czekaj = true;
 

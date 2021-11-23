@@ -2,7 +2,7 @@ package gra;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class PunktDoZabrania {
+public final class PunktDoZabrania {
     int x, y;
 
     public PunktDoZabrania(){

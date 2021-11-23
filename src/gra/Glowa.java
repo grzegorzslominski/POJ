@@ -1,21 +1,18 @@
 package gra;
 
+import java.util.concurrent.ThreadLocalRandom;
 
-public class Glowa {
-    Kierunek kierunek = Kierunek.PRAWO;
-    int x,y;
+public final class PunktDoZabrania {
+    int x, y;
 
-    public Glowa(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public PunktDoZabrania(){
+        this.x = ThreadLocalRandom.current().nextInt(0,15);
+        this.y = ThreadLocalRandom.current().nextInt(0,15);
     }
 
-    public Kierunek getKierunek() {
-        return kierunek;
-    }
-
-    public void setKierunek(Kierunek dir) {
-        this.kierunek = dir;
+    public void reset(){
+        this.x = ThreadLocalRandom.current().nextInt(0,15);
+        this.y = ThreadLocalRandom.current().nextInt(0,15);
     }
 
     public int getX() {
